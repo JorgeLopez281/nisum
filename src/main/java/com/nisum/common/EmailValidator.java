@@ -9,18 +9,18 @@ import java.util.regex.Pattern;
 @Component
 public class EmailValidator {
 
-    @Value("${email.regex}")
+    @Value("${email.regex.regexp}")
     private String emailRegex;
 
-    public boolean isValidEmail(String password) {
+    public boolean isValidEmail(String email) {
 
         Pattern pattern = Pattern.compile(emailRegex);
 
-        if (password == null || password.isEmpty()) {
+        if (email == null || email.isEmpty()) {
             return false;
         }
 
-        Matcher matcher = pattern.matcher(password);
+        Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
 }

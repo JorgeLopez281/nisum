@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 @Component
 public class PasswordValidator {
 
-    @Value("${password.regex}")
+    @Value("${password.regex.regexp}")
     private String passwordRegex;
 
     public boolean isValidPassword(String password) {

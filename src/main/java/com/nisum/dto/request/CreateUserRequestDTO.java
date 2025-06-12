@@ -1,6 +1,7 @@
 package com.nisum.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.nisum.validations.PasswordValidationsAnnotation;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +17,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@PasswordValidationsAnnotation
 public class CreateUserRequestDTO implements Serializable {
 
     @JsonProperty("name")

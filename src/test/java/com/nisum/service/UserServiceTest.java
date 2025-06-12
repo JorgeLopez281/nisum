@@ -136,7 +136,7 @@ public class UserServiceTest {
                 .isActive(true)
                 .timeCreated(LocalDateTime.now())
                 .timeModified(LocalDateTime.now())
-                .timeLastLogin(LocalDateTime.now())
+                .lastLogin(LocalDateTime.now())
                 .phones(List.of(getPhoneEntity()))
                 .build();
     }
@@ -159,7 +159,7 @@ public class UserServiceTest {
                 .isActive(true)
                 .timeCreated(LocalDateTime.now())
                 .timeModified(LocalDateTime.now())
-                .timeLastLogin(LocalDateTime.now())
+                .lastLogin(LocalDateTime.now())
                 .build();
     }
 

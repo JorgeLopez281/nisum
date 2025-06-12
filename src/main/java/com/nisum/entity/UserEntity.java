@@ -58,8 +58,8 @@ public class UserEntity implements Serializable {
     @Column(name = "time_modified")
     private LocalDateTime timeModified;
 
-    @Column(name = "time_last_login")
-    private LocalDateTime timeLastLogin;
+    @Column(name = "last_login")
+    private LocalDateTime lastLogin;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
     private List<PhoneEntity> phones;

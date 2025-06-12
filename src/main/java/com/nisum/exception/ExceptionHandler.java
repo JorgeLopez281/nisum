@@ -10,14 +10,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.validation.ValidationException;
 import java.net.SocketException;
 import java.time.LocalDateTime;
 
-@ControllerAdvice
+@RestControllerAdvice
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class ExceptionHandler {
 
@@ -74,13 +74,13 @@ public class ExceptionHandler {
     public ResponseEntity<ErrorResponse> contentGroupContentException(Exception e) {
         logger.info(EXCEPTION_MESSAGE_CAUSE, e.getMessage(), e.getCause());
 
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body(ErrorResponse.builder().dateTime(LocalDateTime.now())
-                            .statusCode(String.valueOf(HttpStatus.BAD_REQUEST.value()))
-                            .title("Bad request")
-                            .detail("Message: " + e.getMessage())
-                            .build());
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(ErrorResponse.builder().dateTime(LocalDateTime.now())
+                        .statusCode(String.valueOf(HttpStatus.BAD_REQUEST.value()))
+                        .title("Bad request")
+                        .detail("Message: " + e.getMessage())
+                        .build());
 
     }
 }

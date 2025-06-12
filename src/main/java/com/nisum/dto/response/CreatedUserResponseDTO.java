@@ -29,7 +29,7 @@ public class CreatedUserResponseDTO {
     @JsonProperty("modified")
     private LocalDateTime timeModified;
 
-    @Column(name = "last_login")
-    private LocalDateTime timeLastLogin;
+    @JsonProperty("last_login")
+    private LocalDateTime lastLogin;
 
 }

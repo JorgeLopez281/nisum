@@ -23,20 +23,21 @@ import java.util.List;
 @Slf4j
 public class UserService {
 
-    @Autowired
-    private MappingService mappingService;
+    private final MappingService mappingService;
+    private final IUserRepository userRepository;
+    private final IPhoneRepository phoneRepository;
+    private final PasswordValidator passwordValidator;
+    private final EmailValidator emailValidator;
 
     @Autowired
-    private IUserRepository userRepository;
-
-    @Autowired
-    private IPhoneRepository phoneRepository;
-
-    @Autowired
-    private PasswordValidator passwordValidator;
-
-    @Autowired
-    private EmailValidator emailValidator;
+    public UserService(MappingService mappingService, IUserRepository userRepository, IPhoneRepository phoneRepository,
+                       PasswordValidator passwordValidator, EmailValidator emailValidator) {
+        this.mappingService = mappingService;
+        this.userRepository = userRepository;
+        this.phoneRepository = phoneRepository;
+        this.passwordValidator = passwordValidator;
+        this.emailValidator = emailValidator;
+    }
 
     @Transactional
     public CreatedUserResponseDTO createUser(CreateUserRequestDTO userDto) throws PasswordException, EmailException {
@@ -71,7 +72,7 @@ public class UserService {
                 .email(userDto.getEmail())
                 .timeCreated(LocalDateTime.now())
                 .timeModified(LocalDateTime.now())
-                .timeLastLogin(LocalDateTime.now())
+                .lastLogin(LocalDateTime.now())
                 .isActive(true)
                 .build();
     }

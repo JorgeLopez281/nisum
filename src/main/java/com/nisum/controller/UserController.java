@@ -22,11 +22,16 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/users")
-@Api(value = "UserController", tags = { "User Controller" })
+@Api(value = "UserController", tags = {"User Controller"})
 public class UserController {
 
+
+    private final UserService userService;
+
     @Autowired
-    private UserService userService;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @ApiOperation(value = "Create user")
     @ApiResponses(value = {
