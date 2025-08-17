@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 public class MappingService {
 
     private ModelMapper modelMapper;
+
     @Getter
     private static final ObjectMapper objectMapper;
 
