@@ -1,4 +1,4 @@
-# Prueba Nissum
+# Prueba Java
 
 Este programa se encarga de administrar la creación de usuarios junto con sus respectivos números de teléfono. Ofrece una interfaz para registrar nuevos usuarios en el sistema, proporcionando sus datos básicos, como nombre, dirección de correo electrónico y contraseña, así como también permite asociar uno o varios números de teléfono a cada usuario creado para posteriormente poder consultarlo.
 
