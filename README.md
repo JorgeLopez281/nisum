@@ -33,8 +33,9 @@ POST /users
 
 ### Password criteria
 
-- Debe tener al menos 8 caracteres.
+- Debe tener al menos 8 caracteres y maximo 30 caracteres.
 - Debe componerse exclusivamente de letras mayúsculas y minúsculas, dígitos numéricos y los caracteres especiales mencionados (!@#$%.^&*()\-+=). 
+- No puede tener secuencias numericas de 4 numeros ni contener todo u una parte del nombre del registro
 
 ### JSON Excample
 
